@@ -1,0 +1,116 @@
+<section class="vh-100 bg-image" 
+  style="background-image: url('hhttps://images.unsplash.com/photo-1628771065518-0d82f1938462?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8cGlsbHN8ZW58MHx8MHx8&w=1000&q=80');">
+  <div class="mask d-flex align-items-center h-100 gradient-custom-3">
+    <div class="container h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+          <div class="card" style="border-radius: 15px;">
+            <div class="card-body p-4">
+              <h2 class="text-uppercase text-center mb-5">Create an account</h2>
+
+<form [formGroup]="form" (ngSubmit)="submit()">
+    <!-- <div class="form-outline mb-4">   -->
+    <div class="form-outline mb-4">
+        <input
+        autofocus
+            formControlName="name"
+            id="name"
+            type="text"
+            class="form-control"
+            placeholder="User name"
+            [(ngModel)]="username">
+        <div *ngIf="form.controls['name'].touched && form.controls['name'].invalid" class="alert alert-danger">
+            <div class="errorcls" *ngIf="form.controls['name'].errors && form.controls['name'].errors['required']">Name is required.</div>
+            <div class="errorcls" *ngIf="form.controls['name'].errors && form.controls['name'].errors['minlength']">Name should be 3 character.</div>
+            <div class="errorcls" *ngIf="form.controls['name'].errors && form.controls['name'].errors['pattern']">Name should not contain numbers</div>
+        </div>
+    </div>
+
+    <div class="form-outline mb-4">
+        <input
+        autofocus
+            formControlName="phnm"
+            id="name"
+            type="text"
+            class="form-control"
+            placeholder="Phone number"
+            [(ngModel)]="phonenumber">
+        <div *ngIf="form.controls['phnm'].touched && form.controls['phnm'].invalid" class="alert alert-danger">
+            <div class="errorcls" *ngIf="form.controls['phnm'].errors && form.controls['phnm'].errors['required']">Phone number is required.</div>
+            <div class="errorcls" *ngIf="form.controls['phnm'].errors && form.controls['phnm'].errors['pattern']">Phone number should not contain alphabets</div>
+            <div class="errorcls" *ngIf="form.controls['phnm'].errors && form.controls['phnm'].errors['minlength']">Please enter the valid phone number.</div>
+            <div class="errorcls" *ngIf="form.controls['phnm'].errors && form.controls['phnm'].errors['maxlength']">Please enter the valid phone number.</div>
+        </div>
+    </div>
+      
+    <div class="form-outline mb-4">
+        <input
+            formControlName="email"
+            id="email"
+            type="text"
+            class="form-control"
+            placeholder="Enter a EmailId"
+            [(ngModel)]="email">
+        <div *ngIf="form.controls['email'].touched && form.controls['email'].invalid" class="alert alert-danger">
+            <div class="errorcls" *ngIf="form.controls['email'].errors && form.controls['email'].errors['required']">Email is required.</div>
+            
+            <div class="errorcls" *ngIf="form.controls['email'].errors && form.controls['email'].errors['email']">Please, enter valid email address.</div> 
+            <!-- <div *ngIf="form.controls['email'].errors && form.controls['email'].errors['pattern']">Email id should have @ symbol and .</div> -->
+        </div>
+    </div>
+      
+       
+    <div class="form-outline mb-4">
+        <input
+            formControlName="password"
+            id="pass"
+            type="password"
+            class="form-control"
+            placeholder="password"
+            [(ngModel)]="password">
+        <div *ngIf="form.controls['password'].touched && form.controls['password'].invalid" class="alert alert-danger">
+            <div class="errorcls" *ngIf="form.controls['password'].errors && form.controls['password'].errors['required']">Password is required.</div>
+            <div class="errorcls" *ngIf="form.controls['password'].errors && form.controls['password'].errors['minlength']">Password should be 8 character.</div>
+            <div class="errorcls" *ngIf="form.controls['password'].errors && form.controls['password'].errors['maxlength']">Password should not exceed 20 character.</div>
+            
+        </div>
+    </div>
+      
+    <div class="form-outline mb-4">
+        <input
+        placeholder="Type confirm password"
+            formControlName="cpassword"
+            id="pass"
+            type="password"
+            class="form-control"
+            [(ngModel)]="confirmpassword">
+        <!-- <div *ngIf="form.controls['cpassword'].touched && form.controls['cpassword'].invalid" class="alert alert-danger">
+            <div class="errorcls" *ngIf="form.controls['cpassword'].errors && form.controls['cpassword'].errors['required']">Password is required.</div>
+            <div class="errorcls" *ngIf="form.controls['cpassword'].errors && form.controls['cpassword'].errors['minlength']">Password should be 8 character.</div>
+            <div class="errorcls" *ngIf="form.controls['cpassword'].errors && form.controls['cpassword'].errors['maxlength']">Password should not exceed 20 character.</div>
+            <div class="errorcls" *ngIf="form.controls['cpassword'].errors && form.controls['cpassword'].errors['MustMatch']">Password invalid</div> -->
+            <!-- <div class="errorcls" *ngIf="form.controls['cpassword'].errors && form.errors?.['passwordsMatchValidator']">Passwords should match </div> -->
+            <div class="alert alert-danger" *ngIf="passwordMatchError">
+                Password does not match
+              </div>
+        <!-- </div> -->
+    </div>
+    <div class="d-flex justify-content-center">
+        <button type="button"
+          class="btn btn-success btn-block btn-lg gradient-custom-4 text-body" type="submit" onsubmit="submit()">Register</button>
+      </div>
+
+      <div class="text-center text-lg-start mt-4 pt-2">
+             <p class="small fw-bold mt-0 pt-1 mb-0 login-creds register-info">Already have an account? <a class="link-danger" [routerLink]="['/login']" >Login</a></p>
+            <p class="small fw-bold mt-0 pt-1 mb-0 login-creds register-info">Back to Home Page? <a class="link-danger" [routerLink]="['/navbar']" >Click Here</a></p>
+         </div>
+
+    <!-- <button class="d-flex justify-content-center"  type="submit" onsubmit="submit()">Submit</button> -->
+</form>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>

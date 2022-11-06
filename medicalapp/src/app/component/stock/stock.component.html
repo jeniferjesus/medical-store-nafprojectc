@@ -1,0 +1,262 @@
+<!-- <app-analysis></app-analysis> -->
+<body>
+  <div class="sidebar">
+    <div class="logo-details">
+      <!-- <i class='bx bxl-c-plus-plus'></i> -->
+     <span  class="logo_name">MediCure</span>
+    </div>
+      <ul class="nav-links">
+        <li>
+          <a class="active">
+            <i class='bx bx-grid-alt' ></i>
+            <span class="links_name" routerLink="/adminhomecontent">DASHBOARD</span>
+          </a>
+        </li>
+        <li>
+          <a routerLink="/stock">
+            <i class='bx bx-box' ></i>
+            <span class="links_name" routerLink="/stock">ADD STOCK DETAILS</span>
+          </a>
+        </li>
+        <li>
+          <a>
+            <i class='bx bx-list-ul' ></i>
+            <span class="links_name" routerLink="/displaystockdetail">STOCK DETAILS</span>
+          </a>
+        </li>
+        <li>
+          <a>
+            <i class='bx bx-pie-chart-alt-2' ></i>
+            <span class="links_name" routerLink="/displayusermedicine">CUSTOMER MEDICINE</span>
+          </a>
+        </li>
+        <li>
+            <a>
+              <i class='bx bx-pie-chart-alt-2' ></i>
+              <span class="links_name" routerLink="/display-registerdetail">CUSTOMER REGISTER DETAILS</span>
+            </a>
+          </li>
+          <li>
+          <a>
+              <i class='bx bx-user'></i>           
+            <span class="links_name" routerLink="/card">ABOUT US</span>
+          </a>
+        </li>
+        <li class="log_out">
+          <a>
+            <i class='bx bx-log-out'></i>
+            <span class="links_name" routerLink="/navbar">Log out</span>
+          </a>
+        </li>
+      </ul>
+  </div>
+    <section class="home-section">
+     
+<div class="container">
+    <form [formGroup]="stockform" (ngSubmit)="addstockdetail()">
+
+        <div class="row">
+
+            <div class="col">
+
+                <h3 class="title">ADD STOCK DETAILS</h3>
+
+                <div class="inputBox">
+                    <h3><span>STOCK_ID :</span></h3>
+                    <input formControlName="stock_id"  [(ngModel)]="stockid" type="text"> 
+                    <div *ngIf="stockform.controls['stock_id'].touched && stockform.controls['stock_id'].invalid"
+                        class="alert alert-danger">
+                        <div class="errorcls"
+                            *ngIf="stockform.controls['stock_id'].errors && stockform.controls['stock_id'].errors['required']">
+                            ID is required.</div>
+                        <div class="errorcls"
+                            *ngIf="stockform.controls['stock_id'].errors && stockform.controls['stock_id'].errors['pattern']">
+                            ID should not contain alphabets</div>
+                        <div class="errorcls"
+                            *ngIf="stockform.controls['stock_id'].errors && stockform.controls['stock_id'].errors['minlength']">
+                            Minimum Length is 2</div>
+                        <div class="errorcls"
+                            *ngIf="stockform.controls['stock_id'].errors && stockform.controls['stock_id'].errors['maxlength']">
+                            Maximum Length Is 6</div>
+                    </div>
+                </div>
+
+                <div class="inputBox">
+                    <h3> <span>STOCK_NAME :</span></h3>
+                    <input formControlName="name"  [(ngModel)]="stockname" type="text">
+
+                    <div *ngIf="stockform.controls['name'].touched && stockform.controls['name'].invalid"
+                        class="alert alert-danger">
+                        <div class="errorcls"
+                            *ngIf="stockform.controls['name'].errors && stockform.controls['name'].errors['required']">
+                            Name is required.</div>
+                        <div class="errorcls"
+                            *ngIf="stockform.controls['name'].errors && stockform.controls['name'].errors['minlength']">
+                            Name should be Minimum 4 character.</div>
+                        <div class="errorcls"
+                            *ngIf="stockform.controls['name'].errors && stockform.controls['name'].errors['pattern']">
+                            Name should not contain numbers</div>
+                    </div>
+
+
+                </div>
+
+                <div class="inputBox">
+                    <h3><span>QUANTITY :</span></h3>
+
+                    <input formControlName="quantity"  [(ngModel)]="quantity" type="text">
+                    <div *ngIf="stockform.controls['quantity'].touched && stockform.controls['quantity'].invalid"
+                        class="alert alert-danger">
+                        <div class="errorcls"
+                            *ngIf="stockform.controls['quantity'].errors && stockform.controls['quantity'].errors['required']">
+                            Quantity is required.</div>
+                        <div class="errorcls"
+                            *ngIf="stockform.controls['quantity'].errors && stockform.controls['quantity'].errors['pattern']">
+                            ID should not contain alphabets</div>
+                        <div class="errorcls"
+                            *ngIf="stockform.controls['quantity'].errors && stockform.controls['quantity'].errors['minlength']">
+                            Minimum Length is 2</div>
+                        <div class="errorcls"
+                            *ngIf="stockform.controls['quantity'].errors && stockform.controls['quantity'].errors['maxlength']">
+                            Maximum Length Is 9</div>
+                    </div>
+                </div>
+
+                <div class="flex">
+                    <div class="inputBox">
+                        <h3><span>MFG_DATE :</span></h3>
+                        <input type="date" placeholder="MFG_DATE" [(ngModel)]="mfgdate">
+                    </div>
+                    <div class="inputBox">
+                        <h3> <span>EXP_DATE : </span></h3>
+                        <input type="date" [(ngModel)]="exptdate">
+                    </div>
+                </div>
+
+
+            </div>
+
+
+
+        </div>
+        <button type="button"
+          class="submit-btn" type="submit" onsubmit="addstockdetail()">ADD STOCK</button>
+        <!-- <button type="button" class="submit-btn" onsubmit="addstockdetail()">ADD STOCK</button> -->
+        <!-- <input type="submit" value="ADD STOCK" class="submit-btn" onsubmit="addusermedicinedetail()" [disabled]="this.loading">  -->
+
+    </form>
+
+</div>
+    </section>
+    </body>
+
+<!-- //// -->
+<!-- <div class="container">
+    
+    <form [formGroup]="stockform">
+        
+     
+        <div class="row">
+            <div class="col">
+                <h3 class="title">APPLY FOR MEDICINE</h3>
+                
+                <div class="inputBox">                     
+                    <input formControlName="name" type="text" placeholder="Enter The Name">
+                    <div *ngIf="form.controls['name'].touched && form.controls['name'].invalid" class="alert alert-danger">
+                        <div class="errorcls" *ngIf="form.controls['name'].errors && form.controls['name'].errors['required']">Name is required.</div>
+                        <div class="errorcls" *ngIf="form.controls['name'].errors && form.controls['name'].errors['minlength']">Name should be 3 character.</div>
+                        <div class="errorcls" *ngIf="form.controls['name'].errors && form.controls['name'].errors['pattern']">Name should not contain numbers</div>
+                    </div>
+                </div>
+
+                <div class="inputBox">                     
+                    <input formControlName="email" type="email" placeholder="Enter The Email"> 
+                    <div *ngIf="form.controls['email'].touched && form.controls['email'].invalid" class="alert alert-danger">
+                        <div class="errorcls" *ngIf="form.controls['email'].errors && form.controls['email'].errors['required']">Email is required.</div>
+                        
+                        <div class="errorcls" *ngIf="form.controls['email'].errors && form.controls['email'].errors['email']">Please enter valid email address.</div> 
+                        <div *ngIf="form.controls['email'].errors && form.controls['email'].errors['pattern']">Email id should have @ symbol</div>
+                    </div>              
+                </div>
+                 
+                <div class="inputBox">                     
+                    <input formControlName="age" type="text" placeholder="Enter The Age">
+                    <div *ngIf="form.controls['age'].touched && form.controls['age'].invalid" class="alert alert-danger">
+                        <div class="errorcls" *ngIf="form.controls['age'].errors && form.controls['age'].errors['required']">Age is required.</div>
+                        <div class="errorcls" *ngIf="form.controls['age'].errors && form.controls['age'].errors['pattern']">Age should not contain alphabets</div>
+                        <div class="errorcls" *ngIf="form.controls['age'].errors && form.controls['age'].errors['maxlength']&&form.controls['age'].errors['maxlength']">Invalid Age</div>    
+                    </div>
+                </div>
+
+                <div class="inputBox">
+                    
+                    <input formControlName="gender" type="text" list="gen" placeholder="Enter The Gender">
+                    <datalist id="gen">
+                        <option value="Male">
+                        <option value="Female">
+                        <option value="Not to Specify">
+                          </datalist>  
+                    <div *ngIf="form.controls['gender'].touched && form.controls['gender'].invalid" class="alert alert-danger">
+                        <div class="errorcls" *ngIf="form.controls['gender'].errors && form.controls['gender'].errors['required']">Age is required.</div>
+                           
+                        </div>          
+                    </div>       
+                 
+                <div class="inputBox">
+                    <input type="text" formControlName="phnm" placeholder="Enter The Mobile Number">
+                    <div *ngIf="form.controls['phnm'].touched && form.controls['phnm'].invalid" class="alert alert-danger">
+                        <div class="errorcls" *ngIf="form.controls['phnm'].errors && form.controls['phnm'].errors['required']">Phone number is required.</div>
+                        <div class="errorcls" *ngIf="form.controls['phnm'].errors && form.controls['phnm'].errors['pattern']">Phone number should not contain alphabets</div>
+                        <div class="errorcls" *ngIf="form.controls['phnm'].errors && form.controls['phnm'].errors['minlength'] ">Please enter the valid phone number.</div>
+                        <div class="errorcls" *ngIf="form.controls['phnm'].errors && form.controls['phnm'].errors['maxlength']">Please enter the valid phone number.</div>
+                    </div>
+                </div>    
+                             
+               
+                <div class="inputBox" >
+                    <input type="text" list="med" formControlName="med1" placeholder="Available Medicine Name">
+                    <datalist id="med">
+                        <option value="Paracetamol">
+                        <option value="Digene">    
+                        <option value="Gelusil"><option value="Nebilong-H"> 
+                            <option value="Metformin"><option value="Ironox"><option value="Amoxicillin"><option value="Dolo-650">   
+                        
+                          </datalist>  
+                    <div *ngIf="form.controls['med1'].touched && form.controls['gender'].invalid" class="alert alert-danger">
+                      <div class="errorcls" *ngIf="form.controls['med1'].errors && form.controls['med1'].errors['required']">Please Choose the Medicine</div>          
+                    </div>
+                </div>
+
+                <div class="inputBox">
+                  <input  type="text"  formControlName="med2" placeholder="Medicine Quantity"> 
+                  <div *ngIf="form.controls['med2'].touched && form.controls['gender'].invalid" class="alert alert-danger">
+                     <div class="errorcls" *ngIf="form.controls['med2'].errors && form.controls['med2'].errors['required']">Enter the Medicine Quantity</div>
+                   </div>
+                </div>
+<div>
+                <h5 class="title">PAYMENT METHOD</h5>   
+                <div class="inputBox">                     
+                    <input   type="text" placeholder="Enter the Card Holder Name">                 
+                </div> 
+                <div class="inputBox">                     
+                    <input   type="text" placeholder="Enter the Debit/Credit Card No.">                 
+                </div> 
+                <div class="flex-">
+                    <div class="inputBox">                     
+                        <input   type="text" placeholder="Enter the Card Holder Name">                 
+                    </div> 
+                    <div class="inputBox">                     
+                        <input   type="text" placeholder="Enter the ">                 
+                    </div> 
+                </div>
+            </div>
+                
+              </div>           
+        </div>         
+                     
+                        
+        <input type="submit" value="APPLY" class="submit-btn">        
+    </form> 
+ 
+</div>    
+  -->

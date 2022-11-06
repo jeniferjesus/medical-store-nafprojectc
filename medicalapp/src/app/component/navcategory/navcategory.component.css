@@ -1,0 +1,36 @@
+.logo-image{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-top: -6px;
+  }
+  .navfont
+  {
+    font-style:italic;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size:large;
+    color:black;
+  }
+
+  .logohead
+  {
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: italic;
+    font-weight:bold;
+    margin:auto;
+  }
+
+  .category-nav {
+    padding-left:60%;
+  }
+
+  .home-contents:hover{
+    background-color: white;
+  }
+
+  nav
+  {
+    position:relative;
+  }
+  

@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "medical-store-management-7852b": {
+      "hosting": {
+        "medicalapp": [
+          "medical-store-management-7852b"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "medical-store-management-7852b"
+  }
+}

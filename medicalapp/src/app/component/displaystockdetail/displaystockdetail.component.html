@@ -1,0 +1,102 @@
+<body>
+  <div class="sidebar">
+    <div class="logo-details">
+      <!-- <i class='bx bxl-c-plus-plus'></i> -->
+     <span  class="logo_name">MediCure</span>
+    </div>
+      <ul class="nav-links">
+        <li>
+          <a class="active">
+            <i class='bx bx-grid-alt' ></i>
+            <span class="links_name" routerLink="/adminhomecontent">DASHBOARD</span>
+          </a>
+        </li>
+        <li>
+          <a routerLink="/stock">
+            <i class='bx bx-box' ></i>
+            <span class="links_name" routerLink="/stock">ADD STOCK DETAILS</span>
+          </a>
+        </li>
+        <li>
+          <a>
+            <i class='bx bx-list-ul' ></i>
+            <span class="links_name" routerLink="/displaystockdetail">STOCK DETAILS</span>
+          </a>
+        </li>
+        <li>
+          <a>
+            <i class='bx bx-pie-chart-alt-2' ></i>
+            <span class="links_name" routerLink="/displayusermedicine">CUSTOMER MEDICINE</span>
+          </a>
+        </li>
+        <li>
+            <a>
+              <i class='bx bx-pie-chart-alt-2' ></i>
+              <span class="links_name" routerLink="/display-registerdetail">CUSTOMER REGISTER DETAILS</span>
+            </a>
+          </li>
+          <li>
+          <a>
+              <i class='bx bx-user'></i>           
+            <span class="links_name" routerLink="/card">ABOUT US</span>
+          </a>
+        </li>
+        <li class="log_out">
+          <a>
+            <i class='bx bx-log-out'></i>
+            <span class="links_name" routerLink="/navbar">Log out</span>
+          </a>
+        </li>
+      </ul>
+  </div>
+  <section class="home-section">
+    <nav>
+      <div class="sidebar-button">
+        <i class='bx bx-menu sidebarBtn'></i>
+        <span class="dashboard">Dashboard</span>
+      </div>
+      <div class="search-box">
+        <input type="text" placeholder="Search..." [(ngModel)]="searchtext">
+        <i class='bx bx-search' ></i>
+      </div>
+      <!-- <div class="profile-details">
+        <img src="images/profile.jpg" alt="">
+        <span class="admin_name">Prem Shahi</span>
+        <i class='bx bx-chevron-down' ></i>
+      </div> -->
+    </nav>
+    <br><br>
+<div class="col-md-25 mt-2">
+    <h5 class="text-danger">Stock List</h5>
+    <div class="card p-3 shadow">
+        <div class="card-body">
+            <table class="table table-hover">
+                <thead>
+                  <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Stockid</th>
+                    <th scope="col">StockName</th>
+                    <th scope="col">Quantity</th>
+                    <th scope="col">MFG Date</th>
+                    <th scope="col">Exp Date</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let stocklists of stockList | filter:searchtext">
+                    <td>{{stocklists.id}}</td>
+                    <td>{{stocklists.stockid}}</td>                    
+                    <td>{{stocklists.stockname}}</td>
+                    <td>{{stocklists.quantity}}</td>
+                    <td>{{stocklists.mfgdate}}</td>
+                    <td>{{stocklists.exptdate}}</td>
+                    <td>
+                        <button class="btn btn-outline-danger" (click)="deletestockdetail(stocklists)">Delete</button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+        </div>
+    </div>
+</div> 
+</section> 
+</body>

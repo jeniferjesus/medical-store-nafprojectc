@@ -1,0 +1,24 @@
+.bg
+{
+  background-image:url('https://www.pixelstalk.net/wp-content/uploads/images1/Medical-Wallpapers-HD-Free-download.jpg');
+  background-size: cover;
+
+}
+.logo-image{
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-top: -6px;
+}
+.navfont
+{
+  font-style:italic;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight:bold;
+  color:black;
+}
+.navheight
+{
+  height:50px;
+}

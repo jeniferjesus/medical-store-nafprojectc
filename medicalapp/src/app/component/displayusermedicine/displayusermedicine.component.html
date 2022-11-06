@@ -1,0 +1,116 @@
+<body>
+  <div class="sidebar">
+    <div class="logo-details">
+      <!-- <i class='bx bxl-c-plus-plus'></i> -->
+     <span  class="logo_name">MediCure</span>
+    </div>
+      <ul class="nav-links">
+        <li>
+          <a class="active">
+            <i class='bx bx-grid-alt' ></i>
+            <span class="links_name" routerLink="/adminhomecontent">DASHBOARD</span>
+          </a>
+        </li>
+        <li>
+          <a routerLink="/stock">
+            <i class='bx bx-box' ></i>
+            <span class="links_name" routerLink="/stock">ADD STOCK DETAILS</span>
+          </a>
+        </li>
+        <li>
+          <a>
+            <i class='bx bx-list-ul' ></i>
+            <span class="links_name" routerLink="/displaystockdetail">STOCK DETAILS</span>
+          </a>
+        </li>
+        <li>
+          <a>
+            <i class='bx bx-pie-chart-alt-2' ></i>
+            <span class="links_name" routerLink="/displayusermedicine">CUSTOMER MEDICINE</span>
+          </a>
+        </li>
+        <li>
+            <a>
+              <i class='bx bx-pie-chart-alt-2' ></i>
+              <span class="links_name" routerLink="/display-registerdetail">CUSTOMER REGISTER DETAILS</span>
+            </a>
+          </li>
+          <li>
+          <a>
+              <i class='bx bx-user'></i>           
+            <span class="links_name" routerLink="/card">ABOUT US</span>
+          </a>
+        </li>
+        <li class="log_out">
+          <a>
+            <i class='bx bx-log-out'></i>
+            <span class="links_name" routerLink="/navbar">Log out</span>
+          </a>
+        </li>
+      </ul>
+  </div>
+    <section class="home-section">
+        <nav>
+            <div class="sidebar-button">
+              <i class='bx bx-menu sidebarBtn'></i>
+              <span class="dashboard"></span>
+            </div>
+            <div class="search-box">
+              <input type="text" placeholder="Search..." [(ngModel)]="searchtext">
+              <i class='bx bx-search' ></i>
+            </div>
+            <!-- <div class="profile-details">
+              <img src="images/profile.jpg" alt="">
+              <span class="admin_name">Prem Shahi</span>
+              <i class='bx bx-chevron-down' ></i>
+            </div> -->
+          </nav>
+          <br><br>
+<div class="col-md-25 mt-2">
+    <h5 class="text-danger">User Medicine List</h5>
+    <div class="card p-3 shadow">
+        <div class="card-body">
+            <table class="table table-hover">
+                <thead>
+                  <tr>
+                    <!-- <th scope="col">Id</th> -->
+                    <th scope="col">UserName</th>
+                    <th scope="col">phonenumber</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">availablemedicine</th>
+                    <th scope="col">quantity</th>
+                    <th scope="col">amount</th>
+                    <th scope="col">cardholdername</th>
+                    <th scope="col">deborcrednumber</th>
+                    <th scope="col">expdate</th>
+                    <!-- <th scope="col">cvv</th> -->
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let usermedical of usermedicineList | filter:searchtext">
+                    <!-- <td (click)="updateusermedicine(usermedical)">{{usermedical.id}}</td> -->
+                    <td (click)="updateusermedicine(usermedical)">{{usermedical.username}}</td>                    
+                    <td (click)="updateusermedicine(usermedical)">{{usermedical.phonenumber}}</td>
+                    <td (click)="updateusermedicine(usermedical)">{{usermedical.email}}</td>
+                    <td (click)="updateusermedicine(usermedical)">{{usermedical.availablemedicine}}</td>
+                    <td (click)="updateusermedicine(usermedical)">{{usermedical.quantity}}</td>
+                    <td (click)="updateusermedicine(usermedical)">{{usermedical.amount}}</td>
+                    <td (click)="updateusermedicine(usermedical)">{{usermedical.cardholdername}}</td>
+                    <td (click)="updateusermedicine(usermedical)">{{usermedical.deborcrednumber}}</td>
+                    <td (click)="updateusermedicine(usermedical)">{{usermedical.expdate}}</td>
+                    <!-- <td (click)="updateusermedicine(usermedical)">{{usermedical.cvv}}</td> -->
+                    <td>
+                        <button class="btn btn-outline-danger" (click)="deleteusermedicine(usermedical)">Delete</button>
+                    </td>
+                    <!-- <td> 
+                        <button class="btn btn-outline-danger" (click)="updateusermedicine(usermedical)">Edit</button>
+ 
+                      </td> -->
+                  </tr>
+                </tbody>
+              </table>
+        </div>
+    </div>
+</div>  
+</section>
+</body>

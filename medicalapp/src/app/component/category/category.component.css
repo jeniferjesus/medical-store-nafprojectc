@@ -1,0 +1,65 @@
+
+
+.banner-content-2>h5 {
+    font-size: 12px;
+}
+.loadsectbox{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 290px;
+  left: 0;
+  right: 0;
+}
+
+.cetgpagedesignbset {
+    display: inline-block;
+    width: 100%;
+    border: 0;
+    border-radius: 10px;
+    /* background: #fff; */
+    transition: .3s all !important;
+    height: auto !important;
+    padding-top: 0;
+    min-height: 150px !important;
+    margin-bottom: 28px;
+}
+
+
+.pagemaintitlenewset1 {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+}
+.margtopandbotmrped1 {
+    margin-bottom: 25px;
+}
+.pagemaintitlenewset1 {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+}
+
+.caticonseborderiner {
+    display: inline-block;
+    width: 100%;
+    background-color: aliceblue;
+}
+
+
+.cetgpagedesignbset a img {
+    width: 200px !important;
+    height: 200px !important;
+    object-fit: contain;
+    overflow: hidden;
+    margin: 0 auto;
+    border-radius: 50%;
+    padding: 2px;
+    border: 0;
+    transition: .3s all !important;
+}
+
+.bg 
+{
+    background-color: aliceblue;
+}
