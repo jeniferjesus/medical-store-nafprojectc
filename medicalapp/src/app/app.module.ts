@@ -66,6 +66,7 @@ import { StatscompComponent } from './component/statscomp/statscomp.component';
 import { ServicecategoryComponent } from './component/servicecategory/servicecategory.component';
 import { CalltoactionComponent } from './component/calltoaction/calltoaction.component';
 import { EndcompComponent } from './component/endcomp/endcomp.component';
+import { CategoriespageComponent } from './component/categoriespage/categoriespage.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -103,6 +104,7 @@ import { EndcompComponent } from './component/endcomp/endcomp.component';
     ServicecategoryComponent,
     CalltoactionComponent,
     EndcompComponent,
+    CategoriespageComponent,
   ],
   imports: [
     BrowserModule,

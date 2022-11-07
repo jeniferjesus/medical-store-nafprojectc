@@ -37,6 +37,7 @@ import { StockComponent } from './component/stock/stock.component';
 import { ThroatComponent } from './component/throat/throat.component';
 import { VitaminComponent } from './component/vitamin/vitamin.component';
 import { AuthGuard } from './auth.guard';
+import { CategoriespageComponent } from './component/categoriespage/categoriespage.component';
 
 const routes: Routes = [
   {path: '', redirectTo:'navbar', pathMatch:'full'},
@@ -75,7 +76,7 @@ const routes: Routes = [
   {path: 'displaystockdetail',component:DisplaystockdetailComponent},
   {path: 'card',component:CardsComponent},
   // {path: 'servicecategory',component:ServicecategoryComponent},
-  {path: '',component:ServicecategoryComponent},
+  {path: 'servicecategory',component:ServicecategoryComponent},
   // {path: 'acidpage',component:AcidpageComponent},
   {path: 'acidpage/:productId',component:AcidpageComponent},
   {path: 'bp/:bpproductId',component:BpComponent},
@@ -83,6 +84,8 @@ const routes: Routes = [
   {path: 'fever/:feverproductId',component:FeverComponent},
   {path: 'throat/:throatproductId',component:ThroatComponent},
   {path: 'vitamin/:vitaminproductId',component:VitaminComponent},
+  {path: 'categoriespage',component:CategoriespageComponent},
+  
 ];
 
 @NgModule({

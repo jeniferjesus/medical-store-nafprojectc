@@ -9,6 +9,7 @@
       <nav id="navbar" class="navbar">
         <ul>
           <!-- <li><a class="nav-link scrollto"  routerLink="/login">Apply for Medicine</a></li> -->
+          <li><a class="nav-link scrollto" routerLink="/navbar">Home</a></li>
           <li><a class="getstarted scrollto" routerLink="/login">Sign In</a></li>
           &nbsp;&nbsp;  <a routerLink="/login" class="button fancy-button">
             <i class="fas fa-shopping-cart shop-cart">   {{itemcount()}}</i></a>
@@ -54,7 +55,7 @@
             </div>
           </div>
         </div>
-        <p class="small fw-bold mt-2 pt-1 mb-0 login-creds">Back to Home Page? <a  [routerLink]="['/navbar']" 
+        <p class="small fw-bold mt-2 pt-1 mb-0 login-creds">Back to Catergory page? <a  [routerLink]="['/categoriespage']" 
           class="link-danger">Click Here</a></p>
         <!-- <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
           <div class="member">
