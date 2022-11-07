@@ -1,10 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
-*{
+/* @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap'); */
+/* *{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: 'Poppins',sans-serif;
-}
+} */
 body{
   height: 110vh;
   display: flex;
@@ -141,8 +141,8 @@ form .user-details .input-box{
     width: 5px;
   }
   }
-  @media(max-width: 459px){
+  /* @media(max-width: 459px){
   .container .content .category{
     flex-direction: column;
-  }
-}
+  } 
+}*/

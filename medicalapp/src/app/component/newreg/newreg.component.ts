@@ -3,9 +3,12 @@ import { User } from '@angular/fire/auth';
 import { FormGroup, FormControl, Validators, NonNullableFormBuilder, NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { HotToastService } from '@ngneat/hot-toast';
+import { Bpproduct } from 'src/app/model/bpproduct';
+import { Products } from 'src/app/model/products';
 import { Userapplymedicine } from 'src/app/model/userapplymedicine';
 import { ApplymedicineserviceService } from 'src/app/shared/applymedicineservice.service';
 import { AuthService } from 'src/app/shared/auth.service';
+import { CartService } from 'src/app/shared/cart.service';
 
 @Component({
   selector: 'app-newreg',
@@ -13,7 +16,16 @@ import { AuthService } from 'src/app/shared/auth.service';
   styleUrls: ['./newreg.component.css']
 })
 export class NewregComponent implements OnInit {
-  
+  product: Products | undefined;
+  bpproducts:Bpproduct|undefined;
+ item=this.cartservice.getItems();
+  getItems()
+    {
+      // debugger
+      console.log(this.cartservice.getItems());
+      return this.cartservice.getItems(); 
+    }
+ 
   patternname="^[a-zA-Z]+$";
   numpattern="/^[0-9]+$/";
   
@@ -24,10 +36,11 @@ export class NewregComponent implements OnInit {
     email: new FormControl('', [Validators.required,Validators.email]),
     m1: new FormControl('', [Validators.required,Validators.minLength(16),Validators.maxLength(16),Validators.pattern('[0-9]*')]),
     m2: new FormControl('', [Validators.required,Validators.pattern(this.patternname)]),
-    m3: new FormControl('', [Validators.required,Validators.pattern(this.patternname),Validators.maxLength(2),Validators.minLength(2)]),
+    m3: new FormControl('', [Validators.required]),  //,Validators.pattern(this.numpattern),Validators.maxLength(5),Validators.minLength(5)]
     m4:new FormControl('', [Validators.required,Validators.pattern(this.patternname)]),
     m5:new FormControl('', [Validators.required,Validators.maxLength(3),Validators.minLength(3)]),
-    m6:new FormControl('', [Validators.required,Validators.pattern(this.patternname),Validators.pattern('[0-9]*')]),
+    // m6:new FormControl('', [Validators.required,Validators.pattern(this.numpattern)]),
+    m6: new FormControl('', [Validators.required, Validators.pattern('[0-9]*'),Validators.minLength(1),Validators.maxLength(5)]),
   })
   // create local data
 
@@ -41,10 +54,13 @@ s:number=10;
     private data: ApplymedicineserviceService, 
      private fb: NonNullableFormBuilder,
      private router: Router,
-     private toast: HotToastService) { }
+     private toast: HotToastService,
+     private cartservice:CartService) { }
 
-  ngOnInit(): void {
+  
+     ngOnInit(): void {
   }
+  
   usermedicineList: Userapplymedicine[] = [];
   usermedicineObj: Userapplymedicine = {
     id: '',
@@ -98,10 +114,9 @@ s:number=10;
     this.expdate = '';
     this.cvv='';
   }
-  addusermedicinedetail() {
-    
-    const { name, phnm,email, n1,m4,m1,m6,m3,m5 } = this.form.value;
-    if (this.form.valid || !name || !phnm || !email || !n1 || !m4|| !m1 || !m6 || !m3 || !m5) {
+  addusermedicinedetail() {    
+    const { name, phnm,email } = this.form.value; //, n1,m4,m1,m6,m3,m5
+    if (this.form.valid || !name || !phnm || !email ) { //|| !n1 || !m4|| !m1 || !m6 || !m3 || !m5
       alert("fill all details");
       return;
     }
@@ -140,6 +155,7 @@ s:number=10;
     // this.resetForm(employeeForm);
     this.toast.success('Submitted Succcessfully');
   }
+
   // let transporter = nodemailer.createTransport({
   //   host: 'smtp.gmail.com',
   //   port: 465,
@@ -150,6 +166,6 @@ s:number=10;
   //     pass: '******'
   //   }
   // });
-  
+ 
 
 }

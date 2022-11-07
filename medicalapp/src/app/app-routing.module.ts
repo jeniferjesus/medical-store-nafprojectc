@@ -44,7 +44,7 @@ const routes: Routes = [
   {path: 'herocomp',component:HerocompComponent},
   {path: 'aboutmsm',component:AboutmsmComponent},
   {path: 'statscomp',component:StatscompComponent},
-  {path: 'servicecategory',component:ServicecategoryComponent},
+  
   {path: 'calltoaction',component:CalltoactionComponent},
   {path: 'endcomp',component:EndcompComponent},
   {path: 'detail',component:DetailsComponent},
@@ -52,17 +52,17 @@ const routes: Routes = [
   {path: 'login',component:LoginComponent},
   {path: 'loginregister',component:LoginregisterComponent},
 
-  {path: 'acidpage',component:AcidpageComponent},
-  {path: 'bp',component:BpComponent},
+  // {path: 'acidpage',component:AcidpageComponent},
+  // {path: 'bp',component:BpComponent},
   {path: 'category',component:CommonmedComponent},
   {path: 'commonmed',component:CategoryComponent},
-  {path: 'diabetespage',component:DiabetespageComponent},
-  {path: 'fever',component:FeverComponent},
+  // {path: 'diabetespage',component:DiabetespageComponent},
+  // {path: 'fever',component:FeverComponent},
 
   {path: 'navcategory',component:NavcategoryComponent},
   {path: 'stock',component:StockComponent},
-  {path: 'throat',component:ThroatComponent},
-  {path: 'vitamin',component:VitaminComponent},
+  // {path: 'throat',component:ThroatComponent},
+  // {path: 'vitamin',component:VitaminComponent},
   {path: 'navbarmed',component:NavbarmedComponent},
   {path: 'sidenav',component:SidenavComponent},
   {path: 'newreg',component:NewregComponent},
@@ -72,8 +72,16 @@ const routes: Routes = [
   {path: 'displayusermedicine',component:DisplayusermedicineComponent},
   {path: 'display-registerdetail',component:DisplayResigerdetailComponent},
   {path: 'displaystockdetail',component:DisplaystockdetailComponent},
-  {path: 'card',component:CardsComponent}
-  
+  {path: 'card',component:CardsComponent},
+  // {path: 'servicecategory',component:ServicecategoryComponent},
+  {path: '',component:ServicecategoryComponent},
+  // {path: 'acidpage',component:AcidpageComponent},
+  {path: 'acidpage/:productId',component:AcidpageComponent},
+  {path: 'bp/:bpproductId',component:BpComponent},
+  {path: 'diabetespage/:diabetsproductId',component:DiabetespageComponent},
+  {path: 'fever/:feverproductId',component:FeverComponent},
+  {path: 'throat/:throatproductId',component:ThroatComponent},
+  {path: 'vitamin/:vitaminproductId',component:VitaminComponent},
 ];
 
 @NgModule({

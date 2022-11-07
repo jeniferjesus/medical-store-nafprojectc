@@ -1,100 +1,5 @@
-<!-- <app-navbarmed></app-navbarmed>
 
-<div class="banner-area padding-width-1 gray-bg allcatboxcoverpage bg ">
-    <div class="container-fluid" style="min-height: calc(100vh - 450px);">
-    <div class="pagemaintitlenewset1 margtopandbotmrped1">
-            
-            <h2 class="h2_data_seo_content mt-3">Diabetes Medicines</h2>
-        </div>
-        <div class="row">
-            
-                                        
-                <div class="col-lg-3 col-xl-2 col-md-6 col-6" id="catd">
-                    <div class="banner-wrapper banner-hover relative mb-30 cetgpagedesignbset" style="text-align: center;">
-                        <a>
-                                                                    <div class="caticonseborderiner">
-                                    <img src="../../assets/medicine variety/diabetes/Acarbose.jpeg" alt="">
-                                </div>
-                                                            </a>
-                        <div class="banner-content-2 banner-position1">
-                            <h5><a routerLink="/newreg">Acarbose</a></h5>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-xl-2 col-md-6 col-6" id="catd">
-                    <div class="banner-wrapper banner-hover relative mb-30 cetgpagedesignbset" style="text-align: center;">
-                        <a>
-                                                                    <div class="caticonseborderiner">
-                                    <img src="../../assets/medicine variety/diabetes/Metaformin.jpg" alt="">
-                                </div>
-                                                            </a>
-                        <div class="banner-content-2 banner-position1">
-                            <h5><a routerLink="/newreg">Metaformin</a></h5>
-                        </div>
-                    </div>
-                </div>
-                                          
-                <div class="col-lg-3 col-xl-2 col-md-6 col-6" id="catd">
-                    <div class="banner-wrapper banner-hover relative mb-30 cetgpagedesignbset" style="text-align: center;">
-                        <a>
-                                                                    <div class="caticonseborderiner">
-                                    <img src="../../assets/medicine variety/diabetes/OZOMET-PG-2.jpg"alt="">
-                                </div>
-                                                            </a>
-                        <div class="banner-content-2 banner-position1">
-                            <h5><a routerLink="/newreg">OZOMET-PG-2</a></h5>
-                        </div>
-                    </div>
-                </div>
-                                          
-                <div class="col-lg-3 col-xl-2 col-md-6 col-6" id="catd">
-                    <div class="banner-wrapper banner-hover relative mb-30 cetgpagedesignbset" style="text-align: center;">
-                        <a>
-                                                                    <div class="caticonseborderiner">
-                                    <img src="../../assets/medicine variety/diabetes/poifine.jpg"alt="">
-                                </div>
-                                                            </a>
-                        <div class="banner-content-2 banner-position1">
-                            <h5><a routerLink="/newreg">poifine</a></h5>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="col-lg-3 col-xl-2 col-md-6 col-6" id="catd">
-                    <div class="banner-wrapper banner-hover relative mb-30 cetgpagedesignbset" style="text-align: center;">
-                        <a>
-                                                                    <div class="caticonseborderiner">
-                                    <img src="../../assets/medicine variety/diabetes/repaglinide.jpg"alt="">
-                                </div>
-                                                            </a>
-                        <div class="banner-content-2 banner-position1">
-                            <h5><a routerLink="/newreg">repaglinide</a></h5>
-                        </div>
-                    </div>
-                </div>
-
-                           
-     
-                
-
-               
-                                          
-              
-                                          
-            
-                              </div>
-                               
-            
-                                        
-                                                           
-                               
-                                                          
-                             
-    </div>
-    <app-footer></app-footer>  
-</div> -->
-
+ <div *ngIf="Diabet">
 <header id="header" class="fixed-top">
     <div class="container d-flex align-items-center justify-content-between">
   
@@ -104,22 +9,10 @@
   
       <nav id="navbar" class="navbar">
         <ul>
-          <!-- <li><a class="nav-link scrollto active" href="#hero">Home</a></li> -->
-          <!-- <li><a class="nav-link scrollto" href="#about">About</a></li> -->
-          <!-- <li><a class="nav-link scrollto" href="#services">Services</a></li> -->
-          <!-- <li><a class="nav-link scrollto o" href="#portfolio">Portfolio</a></li> -->
-          <li><a class="nav-link scrollto" href="#team" routerLink="/commonmed">Categories</a></li>
-          <li><a class="nav-link scrollto" href="#pricing" routerLink="/login">Apply for Medicine</a></li>
-          <!-- <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
-            <ul>
-              <li><a href="#">Drop Down 1</a></li>
-              <li><a href="#">Drop Down 2</a></li>
-              <li><a href="#">Drop Down 3</a></li>
-              <li><a href="#">Drop Down 4</a></li>
-            </ul>
-          </li> -->
-          <!-- <li><a class="nav-link scrollto" href="#contact">Contact</a></li> -->
-          <li><a class="getstarted scrollto" href="#about" routerLink="/login">Sign In</a></li>
+          <li><a class="nav-link scrollto" routerLink="/login">Apply for Medicine</a></li>
+          <li><a class="getstarted scrollto"  routerLink="/login">Sign In</a></li>
+          &nbsp;&nbsp;  <a routerLink="/login" class="button fancy-button">
+            <i class="fas fa-shopping-cart">{{itemcount()}}</i></a>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
@@ -141,96 +34,79 @@
 
         <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
           <div class="member">
-            <div class="member-img">
+            <!-- <div class="member-img">
               <img src="https://ecommerce.genericartmedicine.com/upload/products/product-photo-67527092022170923.webp" class="img-fluid" alt="">
-              <!-- <div class="social">
-                <a href=""><i class="bi bi-twitter"></i></a>
-                <a href=""><i class="bi bi-facebook"></i></a>
-                <a href=""><i class="bi bi-instagram"></i></a>
-                <a href=""><i class="bi bi-linkedin"></i></a>
-              </div> -->
             </div>
             <div class="member-info">
               <h4>Acarbose</h4>
               <span>fgdfgdfgdfgdfgf</span>
+            </div> -->
+            <div class="member-img">
+              <!-- <img src="https://5.imimg.com/data5/SELLER/Default/2021/8/EF/ZO/WU/131552548/dexilant-500x500.jpg" class="img-fluid" alt=""> -->
+              <img [src]="Diabet.images" class="img-fluid" alt="">
             </div>
+            <div class="member-info">
+              <!-- <h4>Dexilant</h4> -->
+              <h4>{{Diabet.name}}</h4>
+              <h4>{{Diabet.price | currency}}</h4>
+              <button type="button" (click)="addToCart(Diabet)">
+                AddToCart
+              </button>
           </div>
         </div>
-
-        <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
+      </div>
+        <!-- <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
           <div class="member">
             <div class="member-img">
               <img src="https://www.alispharmacy.com/wp-content/uploads/2019/09/metformin_500mg.jpg" class="img-fluid" alt="">
-              <!-- <div class="social">
-                <a href=""><i class="bi bi-twitter"></i></a>
-                <a href=""><i class="bi bi-facebook"></i></a>
-                <a href=""><i class="bi bi-instagram"></i></a>
-                <a href=""><i class="bi bi-linkedin"></i></a>
-              </div> -->
             </div>
             <div class="member-info">
               <h4>Metformin</h4>
               <span>gdfgdfgfdgfdg</span>
             </div>
           </div>
-        </div>
-
+        </div> -->
+<!-- 
         <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="300">
           <div class="member">
             <div class="member-img">
               <img src="https://positrarx.com/api/positrarx/4f5f21fc-d287-11eb-ac66-2d8af994f7f5-ozomet_g2.jpg" class="img-fluid" alt="">
-              <!-- <div class="social">
-                <a href=""><i class="bi bi-twitter"></i></a>
-                <a href=""><i class="bi bi-facgram"></i></a>
-                <a href=""><i class="bi bi-linkedin"></i></a>
-              </div> -->
             </div>
             <div class="member-info">
               <h4>OZOMET-PG-2</h4>
               <span>dfdsfdsfdfdsf</span>
             </div>
           </div>
-        </div>
+        </div> -->
 
-        <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="400">
+        <!-- <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="400">
           <div class="member">
             <div class="member-img">
               <img src="https://rizochem.ae/wp-content/uploads/2022/09/Untitled-design-80.jpg" class="img-fluid" alt="">
-              <!-- <div class="social">
-                <a href=""><i class="bi bi-twitter"></i></a>
-                <a href=""><i class="bi bi-facebook"></i></a>
-                <a href=""><i class="bi bi-instagram"></i></a>
-                <a href=""><i class="bi bi-linkedin"></i></a>
-              </div> -->
             </div>
             <div class="member-info">
               <h4>Piofine</h4>
               <span>dfsdfsdfdsf</span>
             </div>
           </div>
-        </div>
+        </div> -->
 
-        <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="400">
+        <!-- <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="400">
             <div class="member">
               <div class="member-img">
                 <img src="https://genericlab.com/wp-content/uploads/2021/02/REPAGLINIDE-2mg.jpg" class="img-fluid" alt="">
-                <!-- <div class="social">
-                  <a href=""><i class="bi bi-twitter"></i></a>
-                  <a href=""><i class="bi bi-facebook"></i></a>
-                  <a href=""><i class="bi bi-instagram"></i></a>
-                  <a href=""><i class="bi bi-linkedin"></i></a>
-                </div> -->
               </div>
               <div class="member-info">
                 <h4>Repaglinide</h4>
                 <span>dfsdfdsfds</span>
               </div>
             </div>
-          </div>
+          </div> -->
 
       </div>
 
     </div>
-  </section><!-- Diabetes Section -->
+  </section>
+</div><!-- Diabetes Section -->
 
   <app-endcomp></app-endcomp>
