@@ -74,17 +74,18 @@
             <table class="table table-hover">
                 <thead>
                   <tr> 
-                    <th scope="col">Id</th>
+                    <!-- <th scope="col">Id</th> -->
                     <th scope="col">UserName</th>
                     <th scope="col">Phonenumber</th>
                     <th scope="col">Email</th>
                     <th scope="col">Password</th>
                     <th scope="col">confirmpassword</th>
+                    <th scope="col">Action</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr *ngFor="let uregistlist of registerList | filter:searchtext">
-                    <td>{{uregistlist.id}}</td>
+                    <!-- <td>{{uregistlist.id}}</td> -->
                     <td>{{uregistlist.username}}</td>                    
                     <td>{{uregistlist.phonenumber}}</td>
                     <td>{{uregistlist.email}}</td>

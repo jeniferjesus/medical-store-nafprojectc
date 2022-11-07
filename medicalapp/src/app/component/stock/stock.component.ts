@@ -38,30 +38,32 @@ export class StockComponent implements OnInit {
      private router: Router,
      private toast: HotToastService
   ) { }
-  
+  public date = new Date(); 
   ngOnInit(): void {
 
   }
 //  onsubmit(){
 //   this.loading=true;
 //  }
+startDate = new Date();
+
 stockList: Mstockdetail[] = [];
   stockObj: Mstockdetail = {
     id : '',
     stockid : '',
     stockname: '',
     quantity : '',
-    mfgdate :'' ,
+    mfgdate : '' ,
     exptdate : ''
   };
-   public date=new Date();
+  //  public date=new Date();
   id: string = '';
   stockid : string= '';
   stockname: string= '';
   quantity : string= '';
   mfgdate : string= '';
   exptdate : string= '';
-  
+ 
   getAllstockdetaildata() {
 
     this.data.getAllstockdetaildata().subscribe(res => {

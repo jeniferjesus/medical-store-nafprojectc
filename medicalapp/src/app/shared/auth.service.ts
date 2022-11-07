@@ -55,15 +55,12 @@ export class AuthService {
     }
     }
 
-  // getemail(email: string, password: string) {
-  //   signInWithEmailAndPassword(this.auth,email,password).first().subscribe(x => {
-  //     if (x.$exists()){
-  //           console.log(`FOUND`,x);
-  //     }else {
-  //           console.log(`NOT FOUND`);
-  //     }
-  // });
-  // }
- // }
+    isLoggedIn(){
+      var token = localStorage.getItem("Email");
+      if (token !== undefined && token !== "" && token != null) {
+        return true;
+      }
+        return false;
+    }
 
 }

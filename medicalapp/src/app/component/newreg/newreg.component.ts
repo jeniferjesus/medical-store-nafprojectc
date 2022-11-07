@@ -26,7 +26,7 @@ export class NewregComponent implements OnInit {
       return this.cartservice.getItems(); 
     }
  
-  patternname="^[a-zA-Z]+$";
+  patternname="^[a-zA-Z' ']+$";
   numpattern="/^[0-9]+$/";
   
   form = new FormGroup({
@@ -36,7 +36,7 @@ export class NewregComponent implements OnInit {
     email: new FormControl('', [Validators.required,Validators.email]),
     m1: new FormControl('', [Validators.required,Validators.minLength(16),Validators.maxLength(16),Validators.pattern('[0-9]*')]),
     m2: new FormControl('', [Validators.required,Validators.pattern(this.patternname)]),
-    m3: new FormControl('', [Validators.required]),  //,Validators.pattern(this.numpattern),Validators.maxLength(5),Validators.minLength(5)]
+    m3: new FormControl('', [Validators.required,Validators.pattern('[0-9]*'),Validators.maxLength(2),Validators.minLength(2)]),  
     m4:new FormControl('', [Validators.required,Validators.pattern(this.patternname)]),
     m5:new FormControl('', [Validators.required,Validators.maxLength(3),Validators.minLength(3)]),
     // m6:new FormControl('', [Validators.required,Validators.pattern(this.numpattern)]),

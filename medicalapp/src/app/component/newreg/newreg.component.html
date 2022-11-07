@@ -16,7 +16,7 @@
           <div class="input-box">
              
             <input type="text" formControlName="name" [(ngModel)]="username" placeholder="Enter your name" required>
-            <div *ngIf="form.controls['name'].touched && form.controls['name'].invalid" class="alert alert-danger">
+            <div *ngIf="form.controls['name'].touched && form.controls['name'].invalid" class="alert-danger">
               <div class="errorcls" *ngIf="form.controls['name'].errors && form.controls['name'].errors['required']">Name is required.</div>
               <div class="errorcls" *ngIf="form.controls['name'].errors && form.controls['name'].errors['minlength']">Name should be 3 character.</div>
               <div class="errorcls" *ngIf="form.controls['name'].errors && form.controls['name'].errors['pattern']">Name should not contain numbers</div>
@@ -25,7 +25,7 @@
 
           <div class="input-box">
             <input type="text" formControlName="phnm" [(ngModel)]="phonenumber" placeholder="Phone Number" required>
-            <div *ngIf="form.controls['phnm'].touched && form.controls['phnm'].invalid" class="alert alert-danger">
+            <div *ngIf="form.controls['phnm'].touched && form.controls['phnm'].invalid" class="alert-danger">
                 <div class="errorcls" *ngIf="form.controls['phnm'].errors && form.controls['phnm'].errors['required']">Phone number is required.</div>
                 <div class="errorcls" *ngIf="form.controls['phnm'].errors && form.controls['phnm'].errors['pattern']">Phone number should not contain alphabets</div>
                 <div class="errorcls" *ngIf="form.controls['phnm'].errors && form.controls['phnm'].errors['minlength'] ">Please enter the valid phone number.</div>
@@ -35,7 +35,7 @@
 
           <div class="input-box">              
             <input type="text" formControlName="email" [(ngModel)]="email" placeholder="Enter your email" required>
-            <div *ngIf="form.controls['email'].touched && form.controls['email'].invalid" class="alert alert-danger">
+            <div *ngIf="form.controls['email'].touched && form.controls['email'].invalid" class="alert-danger">
               <div class="errorcls" *ngIf="form.controls['email'].errors && form.controls['email'].errors['required']">Email is required.</div>
               
               <div class="errorcls" *ngIf="form.controls['email'].errors && form.controls['email'].errors['email']">Please enter valid email address.</div> 
@@ -45,7 +45,7 @@
 
           <div class="input-box">
              <input type="text" formControlName="n1" [(ngModel)]="cardholdername" placeholder="Enter Card Holder Name " required>
-            <div *ngIf="form.controls['n1'].touched && form.controls['n1'].invalid" class="alert alert-danger">
+            <div *ngIf="form.controls['n1'].touched && form.controls['n1'].invalid" class="alert-danger">
               <div class="errorcls" *ngIf="form.controls['n1'].errors && form.controls['n1'].errors['required']">Name is required.</div>
               <div class="errorcls" *ngIf="form.controls['n1'].errors && form.controls['n1'].errors['minlength']">Name should be 3 character.</div>
               <div class="errorcls" *ngIf="form.controls['n1'].errors && form.controls['n1'].errors['pattern']">Name should not contain numbers</div>
@@ -61,21 +61,27 @@
                 <option value="Gelusil"><option value="Nebilong-H"> 
                     <option value="Metformin"><option value="Ironox"><option value="Amoxicillin"><option value="Dolo-650">                         
                   </datalist>  
-            <div *ngIf="form.controls['m4'].touched && form.controls['m4'].invalid" class="alert alert-danger">
+            <div *ngIf="form.controls['m4'].touched && form.controls['m4'].invalid" class="alert-danger">
               <div class="errorcls" *ngIf="form.controls['m4'].errors && form.controls['m4'].errors['required']">Please Choose the Medicine</div>          
-            </div>
+            </div> 
       </div> -->
 
       <div class="input-box">
         <div class="cart-item" *ngFor="let item of item">
-        <input type="text"  value="{{item.name}}" [(ngModel)]="availablemedicine" placeholder="Available Medicine Name">
+        <input type="text" list="med"  value="{{item.name}}" [(ngModel)]="availablemedicine" placeholder="Available Medicine Name">
+        <!-- <datalist id="med">
+          <option value="Paracetamol">
+          <option value="Digene">    
+          <option value="Gelusil"><option value="Nebilong-H"> 
+              <option value="Metformin"><option value="Ironox"><option value="Amoxicillin"><option value="Dolo-650">                         
+            </datalist>   -->
       </div>
   </div>
       
 
           <div class="input-box">   
             <input type="text" formControlName="m1" placeholder="Enter your Debit/Credit card no." [(ngModel)]="deborcrednumber"  required>
-            <div *ngIf="form.controls['m1'].touched && form.controls['m1'].invalid" class="alert alert-danger">
+            <div *ngIf="form.controls['m1'].touched && form.controls['m1'].invalid" class="alert-danger">
               <div class="errorcls" *ngIf="form.controls['m1'].errors && form.controls['m1'].errors['required']">Required</div>
               <div class="errorcls" *ngIf="form.controls['m1'].errors && form.controls['m1'].errors['maxlength']">Enter only 16-digit number</div>
               <div class="errorcls" *ngIf="form.controls['m1'].errors && form.controls['m1'].errors['minlength']">Enter upto 16-digit number</div>
@@ -85,18 +91,18 @@
 
           <!-- <div class="input-box">
             <input type="number" formControlName="m2" placeholder="Enter your Age" required>
-            <div *ngIf="form.controls['m2'].touched && form.controls['m1'].invalid" class="alert alert-danger">
+            <div *ngIf="form.controls['m2'].touched && form.controls['m1'].invalid" class="alert-danger">
               <div class="errorcls" *ngIf="form.controls['m2'].errors && form.controls['m2'].errors['required']">Age is Required</div>
             </div>            
           </div> -->
 
           <div class="input-box">
             <input type="text" formControlName="m6"  placeholder="Medicine Quantity" [(ngModel)]="quan" [(ngModel)]="quantity"  required>
-            <!-- <div *ngIf="form.controls['m6'].touched && form.controls['m6'].invalid" class="alert alert-danger">
+            <!-- <div *ngIf="form.controls['m6'].touched && form.controls['m6'].invalid" class="alert-danger">
                 <div class="errorcls" *ngIf="form.controls['m6'].errors && form.controls['m6'].errors['required']">Required</div>
                 <div class="errorcls" *ngIf="form.controls['m6'].errors && form.controls['m6'].errors['pattern']">Alphabets not accepted</div>
               </div> -->
-              <div *ngIf="form.controls['m6'].touched && form.controls['m6'].invalid" class="alert alert-danger">
+              <div *ngIf="form.controls['m6'].touched && form.controls['m6'].invalid" class="alert-danger">
                 <div class="errorcls" *ngIf="form.controls['m6'].errors && form.controls['m6'].errors['required']">number is required.</div>
                 <div class="errorcls" *ngIf="form.controls['m6'].errors && form.controls['m6'].errors['pattern']">number should not contain alphabets</div>
                 <div class="errorcls" *ngIf="form.controls['m6'].errors && form.controls['m6'].errors['minlength']">Please enter the valid</div>
@@ -106,10 +112,11 @@
           </div>
 
           <div class="input-box">
-            <input type="text" formControlName="m3" placeholder=" Exp. Month/Date" [(ngModel)]="expdate" required>
-            <div *ngIf="form.controls['m3'].touched && form.controls['m3'].invalid" class="alert alert-danger">
+            <input type="text" formControlName="m3" placeholder=" Exp. Year" [(ngModel)]="expdate" required>
+            <div *ngIf="form.controls['m3'].touched && form.controls['m3'].invalid" class="alert-danger">
               <div class="errorcls" *ngIf="form.controls['m3'].errors && form.controls['m3'].errors['required']">Required</div>
               <div class="errorcls" *ngIf="form.controls['m3'].errors && form.controls['m3'].errors['minlength']">Invalid</div>
+              <div class="errorcls" *ngIf="form.controls['m3'].errors && form.controls['m3'].errors['pattern']">alphabets not accepted</div>
               <div class="errorcls" *ngIf="form.controls['m3'].errors && form.controls['m3'].errors['maxlength']">Invalid</div>
             </div>
           
@@ -122,7 +129,7 @@
 
             <div class="input-box">
               <input type="text" formControlName="m5" [(ngModel)]="cvv" placeholder="CVV" required>
-              <div *ngIf="form.controls['m5'].touched && form.controls['m5'].invalid" class="alert alert-danger">
+              <div *ngIf="form.controls['m5'].touched && form.controls['m5'].invalid" class="alert-danger">
                   <div class="errorcls" *ngIf="form.controls['m5'].errors && form.controls['m5'].errors['minlength']">Enter upto 3-digit</div>
                   <div class="errorcls" *ngIf="form.controls['m5'].errors && form.controls['m5'].errors['maxlength']">Enter only 3-digit</div>
                   

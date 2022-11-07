@@ -39,7 +39,7 @@ export class CustomValidators {
   styleUrls: ['./loginregister.component.css']
 })
 export class LoginregisterComponent implements OnInit {
-  patternname="^[a-zA-Z]+$";
+  patternname="^[a-zA-Z' ']+$";
   numpattern="/^[0-9]+$/";
   
   form = new FormGroup({

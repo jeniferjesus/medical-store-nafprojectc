@@ -36,6 +36,7 @@ import { SidenavComponent } from './component/sidenav/sidenav.component';
 import { StockComponent } from './component/stock/stock.component';
 import { ThroatComponent } from './component/throat/throat.component';
 import { VitaminComponent } from './component/vitamin/vitamin.component';
+import { AuthGuard } from './auth.guard';
 
 const routes: Routes = [
   {path: '', redirectTo:'navbar', pathMatch:'full'},
