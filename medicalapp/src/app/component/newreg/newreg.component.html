@@ -19,6 +19,7 @@
             <div *ngIf="form.controls['name'].touched && form.controls['name'].invalid" class="alert-danger">
               <div class="errorcls" *ngIf="form.controls['name'].errors && form.controls['name'].errors['required']">Name is required.</div>
               <div class="errorcls" *ngIf="form.controls['name'].errors && form.controls['name'].errors['minlength']">Name should be 3 character.</div>
+              <div class="errorcls" *ngIf="form.controls['name'].errors && form.controls['name'].errors['maxlength']">Max. Length is 15</div>
               <div class="errorcls" *ngIf="form.controls['name'].errors && form.controls['name'].errors['pattern']">Name should not contain numbers</div>
           </div>
           </div>
@@ -48,6 +49,8 @@
             <div *ngIf="form.controls['n1'].touched && form.controls['n1'].invalid" class="alert-danger">
               <div class="errorcls" *ngIf="form.controls['n1'].errors && form.controls['n1'].errors['required']">Name is required.</div>
               <div class="errorcls" *ngIf="form.controls['n1'].errors && form.controls['n1'].errors['minlength']">Name should be 3 character.</div>
+              
+              <div class="errorcls" *ngIf="form.controls['n1'].errors && form.controls['n1'].errors['maxlength']">Max. Length is 15</div>
               <div class="errorcls" *ngIf="form.controls['n1'].errors && form.controls['n1'].errors['pattern']">Name should not contain numbers</div>
            
           </div>

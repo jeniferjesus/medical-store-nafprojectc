@@ -108,7 +108,7 @@ export class LoginComponent implements OnInit {
   })  
   )
   .subscribe(() => {   
-   this.router.navigate(['/categoriespage']);
+   this.router.navigate(['/newreg']);
   });
 }
 }  
